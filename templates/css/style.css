@@ -1,0 +1,11 @@
+table {
+    border-collapse: collapse;
+}
+
+tr {
+    border: 10px solid black;
+    width: 150px;
+    height: 150px;
+    font-size: 30px;
+    text-align: center;
+}

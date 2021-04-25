@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Меню
+{% endblock %}
+
+{% block body %}
+    <center>
+        <form action="/" method="post">
+            <h1>введите размер поля(длина х ширина)</h1>
+            <div class="form-group">
+                <input name="boardsize" autocomplete="off" value="3" type="number" min="3" max="7">
+            </div>
+            <legend style="border:10px solid grey; width:200px">игрок 1</legend>
+            <input type="text" name="player1n" value={{player1}}>
+            <h5> </h5>
+            <legend style="border:10px solid grey; width:200px;">игрок 2</legend>
+            <input type="text" name="player2n" value={{player2}}>
+            <h5> </h5>
+            <button class="btn btn-secondary" type="submit">Начать игру</button>
+            <br>
+            <br>
+            <h2>Правила</h2>
+            <p>В клетках квадратика n на n (3 ⩽ n ⩽ 7) 2 игрока по очереди ставят крестики (первый) и нолики (второй).
+                <br> Выиграет тот, кто поставит в ряд n своих знаков.</p>
+        </form>
+    </center>
+{% endblock %}

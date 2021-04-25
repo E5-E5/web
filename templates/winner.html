@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Результаты
+{% endblock %}
+
+{% block head %}
+    <meta charset="utf-8">
+
+{% endblock %}
+
+{% block body %}
+
+    <center>
+        <h1>Игра окончена</h1>
+        <h2>{{ winner }}</h2>
+        <br>
+
+        <form action="{{ url_for('index') }}" method="get" target="_blank">
+            <button class="btn btn-secondary" type="submit">Click me</button>
+        </form>
+    </center>
+
+
+<br><br><br>
+
+<center><h1>Статистика</h1>
+<br>
+
+
+<table style="border: 10px solid black">
+<h2><tr style="border: 10px solid black; margin-left: auto; margin-right: auto"><th style="border: 10px solid black" >Имя</th><th style="border: 10px solid black">Победы</th>
+    <th style="border: 10px solid black">Поражения</th><th style="border: 10px solid black">Ничья</th>
+    <th style="border: 10px solid black">Процент побед</th></tr></h2>
+    {% for item in names%}
+        <h5><tr style="border: 10px solid black"><td style="border: 10px solid black">{{item.name}} </td>
+            <td style="border: 10px solid black;background: #9ACD32;">{{item.win}}</td>
+            <td style="border: 10px solid black;background: #FFA07A;">{{item.lose}} </td>
+            <td style="border: 10px solid black;background: #D3D3D3;">{{item.pat}}</td>
+            <td style="border: 10px solid black;background: #9370DB;">{{item.pr}}</td></tr></h5>
+    {% endfor %}
+
+</table></center>
+<style>
+            table {
+                border-collapse: collapse;
+            }
+
+            tr {
+                border: 10px solid black;
+                width: 150px;
+                height: 150px;
+                font-size: 30px;
+                text-align: center;
+            }
+</style>
+{% endblock %}
