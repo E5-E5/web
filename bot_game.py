@@ -161,4 +161,4 @@ async def place_error(ctx, error):
     elif isinstance(error, commands.BadArgument):
         await ctx.send("Проверьте правильность написания координат хода.")
 
-client.run("")
+client.run("Token")
